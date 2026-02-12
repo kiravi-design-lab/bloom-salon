@@ -1,16 +1,10 @@
-// ハンバーガークリックでメニュー表示/非表示
-hamburger.addEventListener('click', (e) => {
-  e.stopPropagation(); // クリックイベントが外側に伝わらないようにする
+// ハンバーガーメニュー
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('active');
 });
-
-// 外側クリックでメニューを閉じる
-document.addEventListener('click', (e) => {
-  if (navMenu.classList.contains('active') && !navMenu.contains(e.target)) {
-    navMenu.classList.remove('active');
-  }
-});
-
 
 // モーダル
 const newsLinks = document.querySelectorAll('.news-link');
